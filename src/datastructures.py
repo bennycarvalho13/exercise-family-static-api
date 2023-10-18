@@ -34,16 +34,16 @@ class FamilyStructure:
             "last_name": "Jackson",
             "age": 5,
             "lucky_numbers": 1
-            }
+            },
         ]
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
-        return 3443
+        return randint(0, 99999999)
 
     def add_member(self, member):
             newMember = {
-            "id": self._generateId(),
+            "id": member["id"] or self._generateId(),
             "first_name": member["first_name"],
             "last_name": self.last_name,
             "age": member["age"],
