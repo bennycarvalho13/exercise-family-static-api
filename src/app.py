@@ -31,9 +31,9 @@ def get_all_members():
     
     return jsonify(members), 200
 
-@app.route('/member/<int:member_id>', methods=['GET'])
-def get_member(member_id):
-    member = jackson_family.get_member(member_id)
+@app.route('/member/<int:id>', methods=['GET'])
+def get_member(id):
+    member = jackson_family.get_member(id)
     if member:
         return jsonify(member), 200
     else:
