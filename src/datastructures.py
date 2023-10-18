@@ -43,23 +43,23 @@ class FamilyStructure:
 
     def add_member(self, member):
             newMember = {
-            "id": member["id"] or self._generateId(),
-            "first_name": member["first_name"],
+            "id": member.get("id") or self._generateId(),
+            "first_name": member.get("first_name"),
             "last_name": self.last_name,
-            "age": member["age"],
-            "lucky_numbers": member["lucky_numbers"]
+            "age": member.get("age"),
+            "lucky_numbers": member.get("lucky_numbers")
         }
             self._members.append(newMember)
             return True
     
     def delete_member(self, id):
         for member in self._members:
-            if member["id"] == id:
+            if member.get("id") == id:
                 self._members.remove(member)
     
     def get_member(self, id):
         for member in self._members:
-            if member["id"] == id:
+            if member.get("id") == id:
                 return member
 
 
